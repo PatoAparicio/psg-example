@@ -1,2 +1,2 @@
 print("Título: Noches de Boda")
-print("Joaquín Sabina")
+print("Autor: Joaquín Sabina")

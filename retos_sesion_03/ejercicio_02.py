@@ -1,0 +1,7 @@
+print("Humano: Hola Sr. Bigotes, ¿Cómo estás?")
+print("Gato: ¿Miau miau miau? Miau miau miau miau. (¿Qué cómo estoy? Si me dejaste solo todo el día)")
+print("Humano: Pero debo trabjar para comprarte la comida tan cariisima que te gusta")
+print("Gato: Miau miau miau miau. (Muero de hambre, pensé que nunca volverías")
+print("Humano: Siempre volveré, toma tu comida")
+print("Gato: *Procede a comer*")
+print("Gato: Gracias, ahora puedes volver a irte")
