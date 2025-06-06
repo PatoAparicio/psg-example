@@ -1,0 +1,12 @@
+print("Agregar 5 Ejemplos con otras funciones no vistas en la sesión")
+palabra="Hola mundo"
+print("Funcion 1 isupper")
+print(palabra.isupper())
+print("Funcion 2 zfill")
+print(palabra.zfill(15))
+print("Funcion 3 isspace")
+print(palabra.isspace())
+print("Funcion 4 removeprefix")
+print(palabra.removeprefix("Hola "))
+print("Funcion 5 center")
+print(palabra.center(16, '*'))
