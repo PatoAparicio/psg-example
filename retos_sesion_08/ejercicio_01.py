@@ -1,0 +1,6 @@
+print("Ingresa por teclado tres coordenadas 'x','y','z', Convierte los valores a enteros almacena los 3 valores en una tupla e imprime el resultado")
+x = int(input("Ingrese la cordenada x: "))
+y = int(input("Ingrese la cordenada y: "))
+z = int(input("Ingrese la cordenada z: "))
+cordenadas=(x,y,z)
+print(cordenadas)
