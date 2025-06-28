@@ -1,0 +1,13 @@
+print("Crear una lista con 5 números flotantes y 5 enteros y mostrar todos los elementos y sus tipos de datos utilizando sus índices")
+lista=[3.1, 2.5, 12.3,5.9,78.1,5,89,3,45,7,15]
+print("Los números y sus tipos son:")
+print (lista[0], type(lista[0])) 
+print (lista[1], type(lista[1])) 
+print (lista[2], type(lista[2])) 
+print (lista[3], type(lista[3])) 
+print (lista[4], type(lista[4])) 
+print (lista[5], type(lista[5])) 
+print (lista[6], type(lista[6])) 
+print (lista[7], type(lista[7])) 
+print (lista[8], type(lista[8])) 
+print (lista[9], type(lista[9])) 
