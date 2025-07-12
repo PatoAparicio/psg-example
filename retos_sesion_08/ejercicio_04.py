@@ -3,5 +3,6 @@ notas=(10, 61, 00, 21, 22, 0, 32, 30, 41, 51, 5, 23, 100)
 longitud = len(notas)
 suma = sum(notas)
 promedio=suma/longitud
+aprobado = promedio >= 51
 print("El promedio del alumno es: ", promedio)
-print("El alumno está reprobado")
+print("El alumno está aprobado: ", aprobado)

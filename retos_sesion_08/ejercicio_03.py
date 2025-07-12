@@ -1,6 +1,7 @@
 print("Ingresa una pregunta por teclado y almacena el valor en una tupla")
-pregunta=input("Ingrese una pregunta ")
-concatenar = "¿" + pregunta + "?"
+ingreso=input("Ingrese una pregunta ")
+pregunta=(ingreso, )
+concatenar = ('¿', ) + pregunta + ('?', )
 print (concatenar)
 repetir = concatenar*2
 print (repetir)
