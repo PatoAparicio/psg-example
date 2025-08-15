@@ -27,8 +27,23 @@ print (len(producto))
 print("¿Cuanto cuestan todos los productos?")
 print (sum(precio))
 print("Ordena los productos y precios del más barato al más caro")
-precio.sort()
-print(precio)
+precio_temp = precio.copy()
+precio_temp.sort()
+producto_ordenado = []
+precio_1 = precio_temp[0] 
+indice_1 = precio.index(precio_1)
+producto_ordenado.append(producto[indice_1])
+precio_2 = precio_temp[1] 
+indice_2 = precio.index(precio_2)
+producto_ordenado.append(producto[indice_2])
+precio_3 = precio_temp[2] 
+indice_3 = precio.index(precio_3)
+producto_ordenado.append(producto[indice_3])
+precio_4 = precio_temp[3] 
+indice_4 = precio.index(precio_4)
+producto_ordenado.append(producto[indice_4])
+print("Productos ordenados:", producto_ordenado)
+print("Precios ordenados:", precio_temp)
 print("Eliminar todos los productos de las listas")
 print(producto.clear())
 print(precio.clear())
