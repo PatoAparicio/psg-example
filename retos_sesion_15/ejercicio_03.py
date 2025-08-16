@@ -2,11 +2,8 @@ print("Crea un programa que simule el funcionamiento de un cajero automático so
 class FondosInsuficientesError(Exception):
     pass
 
-class LimiteExcedidoError(Exception):
-    pass
-
 def cajero_automatico():
-    saldo = 1000.00
+    saldo = 900.00
     
     while True:
         try:
@@ -20,7 +17,7 @@ def cajero_automatico():
             monto = float(monto)
             
             if monto > 1000:
-                raise LimiteExcedidoError("El monto excede el límite de $1000 por transacción")
+                raise ValueError("El monto excede el límite de $1000 por transacción")
             if monto > saldo:
                 raise FondosInsuficientesError("Fondos insuficientes")
             if monto <= 0:
@@ -29,11 +26,9 @@ def cajero_automatico():
             saldo -= monto
             print(f"Retiro exitoso. Nuevo saldo: ${saldo:.2f}")
             
-        except ValueError:
-            print("Error: Ingrese un valor numérico válido")
-        except FondosInsuficientesError as e:
+        except ValueError as e:
             print(f"Error: {e}")
-        except LimiteExcedidoError as e:
+        except FondosInsuficientesError as e:
             print(f"Error: {e}")
         except Exception as e:
             print(f"Error inesperado: {e}")
