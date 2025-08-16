@@ -1,54 +1,66 @@
 print("Tres en Raya")
-def tres_en_raya():
-    tablero = [[" " for _ in range(3)] for _ in range(3)]
-    jugador = "X"
+tablero = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+jugador_actual = "X"
+
+def tres_en_raya(jugador, fila, columna):
+    global tablero, jugador_actual
     
-    def imprimir_tablero():
-        for fila in tablero:
-            print("|".join(fila))
-            print("-" * 5)
+    if fila < 0 or fila > 2 or columna < 0 or columna > 2:
+        print("Posición fuera del rango (0-2)")
+        return tablero
     
-    def ganador():
-        for i in range(3):
-            if tablero[i][0] == tablero[i][1] == tablero[i][2] != " ":
-                return True
-            if tablero[0][i] == tablero[1][i] == tablero[2][i] != " ":
-                return True
+    if tablero[fila][columna] != ' ':
+        print("Casilla ya está ocupada")
+        return tablero
+    
+    tablero[fila][columna] = jugador
+         
+    if hay_ganador(jugador):
+        print(f"¡Jugador {jugador} gana!")
+        return tablero
+    elif hay_empate():
+        print("¡Empate!")
+        return tablero
+    else:
+        jugador_actual = "O" if jugador == "X" else "X"
         
-        if tablero[0][0] == tablero[1][1] == tablero[2][2] != " ":
+    return tablero
+
+def hay_ganador(jugador):
+    for fila in tablero:
+        if fila[0] == fila[1] == fila[2] == jugador:
             return True
-        if tablero[0][2] == tablero[1][1] == tablero[2][0] != " ":
+    
+    for col in range(3):
+        if tablero[0][col] == tablero[1][col] == tablero[2][col] == jugador:
             return True
-        return False
     
-    def empate():
-        return all(" " not in fila for fila in tablero)
+    if tablero[0][0] == tablero[1][1] == tablero[2][2] == jugador:
+        return True
     
-    while True:
-        imprimir_tablero()
-        print(f"Turno del jugador {jugador}")
-        fila = int(input("Fila (0-2): "))
-        col = int(input("Columna (0-2): "))
-            
-        if fila < 0 or fila > 2 or col < 0 or col > 2:
-            print("Posición fuera del rango. Usa números del 0 al 2.")
-            continue
-            
-        if tablero[fila][col] != " ":
-            print("Casilla ocupada. Intenta de nuevo.")
-            continue
-           
-        tablero[fila][col] = jugador
-            
-        if ganador():
-            imprimir_tablero()
-            print(f"¡Jugador {jugador} gana!")
-            break
-        elif empate():
-            imprimir_tablero()
-            print("¡Empate!")
+    if tablero[0][2] == tablero[1][1] == tablero[2][0] == jugador:
+        return True
+    
+    return False
+
+def hay_empate():
+    for fila in tablero:
+        if ' ' in fila:
+            return False
+    return True
+
+while True:
+    print(f"\nTurno del jugador: {jugador_actual}")
+    print("Tablero:")
+    for fila_tablero in tablero:
+        print(fila_tablero)
+    
+    fila = int(input("Ingresa la fila (0-2): "))
+    columna = int(input("Ingresa la columna (0-2): "))
+    tres_en_raya(jugador_actual, fila, columna)
+    
+    if hay_ganador("X") or hay_ganador("O") or hay_empate():
+        print("\n¡Juego terminado!")
         break
-             
-        jugador = "O" if jugador == "X" else "X"
-            
-tres_en_raya()
+        
+  
